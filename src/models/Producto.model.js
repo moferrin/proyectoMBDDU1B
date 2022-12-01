@@ -5,6 +5,10 @@ const productoSchema = new Schema({
     precio : Number,
     categoria : String,
     cantidad : Number,
+    proveedor: {
+        type: Schema.Types.ObjectId,
+        ref : "Proveedor"
+    }
     //imagen : String
 });
 
