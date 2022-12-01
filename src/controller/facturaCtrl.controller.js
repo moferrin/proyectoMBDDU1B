@@ -32,31 +32,25 @@ let guardarFactura = async (req, res) => {
 */
     
     validar_cantidad(body.productos_detalle, (respuesta) => {
-        /*
+        
         if (respuesta== false){
             return res.json({
                 ok: false,
                 mensaje: "No hay productos para guardar"
             });
 
-        }*/
+        }
 
 
         let venta = new FacturaModel({
             valor_total: body.total,
             cliente: body.cliente,
+            usuario: body.usuario,
             productos: respuesta
         });
 
 
         venta.save((err, ventaNew) => {
-
-            if(respuesta== false){
-                return res.json({
-                    ok: false,
-                    mensaje: "No hay productos para guardar"
-                });
-            }
 
             if (err)
                 return res.json({

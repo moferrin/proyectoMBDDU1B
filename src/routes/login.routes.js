@@ -23,7 +23,9 @@ router.post('/signin', async (req, res) => {
 
 		const token = jwt.sign({_id: user._id}, 'secretkey');
 
-    return res.status(200).json({token});
+		console.log(user._id)
+
+    return res.status(200).json({token,idd:user._id});
 });
 
 export async function verifyToken(req, res, next) {
