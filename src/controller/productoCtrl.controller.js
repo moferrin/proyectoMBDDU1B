@@ -17,7 +17,8 @@ export const guardarProducto = async (req, res) => {
 
 export const darProductos = async (req, res) => {
     try{
-        const productos = await ProductoModel.find();
+        const productos = await ProductoModel.find()
+        .populate("categoria");
         console.log(productos);
         res.json(productos);
     } catch (error) {
