@@ -8,6 +8,10 @@ const productoSchema = new Schema({
     proveedor: {
         type: Schema.Types.ObjectId,
         ref : "Proveedor"
+    },
+    categoria: {
+        type: Schema.Types.ObjectId,
+        ref : "Categoria"
     }
     //imagen : String
 });

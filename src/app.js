@@ -7,6 +7,8 @@ import productoRoute from './routes/producto.routes';
 import clienteRoute from './routes/cliente.routes';
 import facturaRoute from './routes/factura.routes';
 import proveedorRoute from './routes/proveedor.routes';
+import categoriaRoute from './routes/categoria.routes';
+
 
 const cors = require('cors');
 
@@ -23,6 +25,6 @@ app.use(productoRoute);
 app.use(clienteRoute);
 app.use(facturaRoute);
 app.use(proveedorRoute);
-
+app.use(categoriaRoute);
 
 export default app;
